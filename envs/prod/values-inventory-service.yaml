@@ -3,7 +3,7 @@ replicaCount: 2
 fullnameOverride: inventory-service
 
 image:
-  repository: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/inventory-service
+  repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/inventory-service
   tag: v1.0.0
   pullPolicy: Always
 
@@ -15,7 +15,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: prod.pharma.internal
+  host: prod.wsedf.online 
   path: /inventory
   pathType: Prefix
 
@@ -53,7 +53,7 @@ readinessProbe:
 
 configmap:
   SPRING_PROFILES_ACTIVE: prod
-  DB_HOST: <RDS_ENDPOINT>
+  DB_HOST: pharma-dev-postgres.cpi0gswk4xit.eu-west-2.rds.amazonaws.com
   LOG_LEVEL: WARN
   SERVER_PORT: "8083"
   MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics,prometheus"
