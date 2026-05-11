@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/pharma-auth-service
+  repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/pharma-auth-service
   tag: latest
   pullPolicy: Always
 
@@ -13,7 +13,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: pharma.internal
+  host: wsedf.online 
   path: /auth
   pathType: Prefix
 
@@ -51,7 +51,7 @@ readinessProbe:
 
 configmap:
   SPRING_PROFILES_ACTIVE: prod
-  DB_HOST: <RDS_ENDPOINT>
+  DB_HOST: pharma-dev-postgres.cpi0gswk4xit.eu-west-2.rds.amazonaws.com
   LOG_LEVEL: WARN
   SERVER_PORT: "8081"
   TOKEN_EXPIRATION_MS: "28800000"
