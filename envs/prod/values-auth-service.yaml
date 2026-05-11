@@ -3,7 +3,7 @@ replicaCount: 1
 fullnameOverride: auth-service
 
 image:
-  repository: 873135413040.dkr.ecr.us-east-1.amazonaws.com/auth-service
+  repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/auth-service
   tag: v1.0.0
   pullPolicy: Always
 
@@ -15,7 +15,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: prod.pharma.internal
+  host: prod.wsedf.online 
   path: /auth
   pathType: Prefix
 
@@ -53,7 +53,7 @@ readinessProbe:
 
 configmap:
   SPRING_PROFILES_ACTIVE: prod
-  DB_HOST: pharma-prod-postgres.cs3c424yurej.us-east-1.rds.amazonaws.com
+  DB_HOST: pharma-dev-postgres.cpi0gswk4xit.eu-west-2.rds.amazonaws.com
   LOG_LEVEL: DEBUG
   SERVER_PORT: "8081"
   TOKEN_EXPIRATION_MS: "86400000"
