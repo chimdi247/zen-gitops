@@ -3,7 +3,7 @@ replicaCount: 1
 fullnameOverride: supplier-service
 
 image:
-  repository: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/supplier-service
+  repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/supplier-service
   tag: v1.0.0
   pullPolicy: Always
 
@@ -15,7 +15,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: qa.pharma.internal
+  host: qa.wsedf.online 
   path: /suppliers
   pathType: Prefix
 
@@ -53,7 +53,7 @@ readinessProbe:
 
 configmap:
   SPRING_PROFILES_ACTIVE: qa
-  DB_HOST: <RDS_ENDPOINT>
+  DB_HOST: pharma-dev-postgres.cpi0gswk4xit.eu-west-2.rds.amazonaws.com
   LOG_LEVEL: INFO
   SERVER_PORT: "8084"
   MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics,prometheus"
