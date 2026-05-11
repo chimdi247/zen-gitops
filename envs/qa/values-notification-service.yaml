@@ -2,7 +2,7 @@ replicaCount: 1
 fullnameOverride: notification-service
 image:
   repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/notification-service
-  tag: sha-002169c
+  tag: sha-7a960a9
   pullPolicy: Always
 service:
   type: ClusterIP
@@ -11,7 +11,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: qa.wsedf.online 
+  host: qa.wsedf.online
   path: /notifications
   pathType: Prefix
 resources:
