@@ -3,7 +3,7 @@ replicaCount: 1
 # and matches the default URL expected by api-gateway
 fullnameOverride: drug-catalog-service
 image:
-  repository: <AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/drug-catalog-service
+  repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/drug-catalog-service
   tag: sha-a0017b8
   pullPolicy: Always
 service:
@@ -13,7 +13,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: qa.pharma.internal
+  host: qa.wsedf.online 
   path: /catalog
   pathType: Prefix
 resources:
@@ -47,7 +47,7 @@ readinessProbe:
   successThreshold: 1
 configmap:
   SPRING_PROFILES_ACTIVE: qa
-  DB_HOST: <RDS_ENDPOINT>
+  DB_HOST: pharma-dev-postgres.cpi0gswk4xit.eu-west-2.rds.amazonaws.com
   LOG_LEVEL: INFO
   SERVER_PORT: "8082"
   MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics,prometheus"
