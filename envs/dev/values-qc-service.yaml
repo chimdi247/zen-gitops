@@ -1,7 +1,7 @@
 replicaCount: 1
 fullnameOverride: qc-service
 image:
-  repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/qc-service
+  repository: 319602347522.dkr.ecr.eu-west-2.amazonaws.com/qc-service
   tag: sha-a0017b8 # CI overwrites this on first successful build
   pullPolicy: Always
 service:
@@ -11,7 +11,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: dev.wsedf.online
+  host: dev.vhbj.site
   path: /qc
   pathType: Prefix
 resources:
