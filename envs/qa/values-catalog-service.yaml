@@ -4,7 +4,7 @@ replicaCount: 1
 fullnameOverride: drug-catalog-service
 image:
   repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/drug-catalog-service
-  tag: sha-a0017b8
+  tag: sha-406615d
   pullPolicy: Always
 service:
   type: ClusterIP
@@ -13,7 +13,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: qa.wsedf.online 
+  host: qa.wsedf.online
   path: /catalog
   pathType: Prefix
 resources:
