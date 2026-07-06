@@ -14,10 +14,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - wsedf.online
+        - vhbj.site
       secretName: argocd-tls
   rules:
-    - host: wsedf.online
+    - host: vhbj.site
       http:
         paths:
           - path: /
