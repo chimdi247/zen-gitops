@@ -1,7 +1,7 @@
 replicaCount: 1
 fullnameOverride: notification-service
 image:
-  repository: 330177108585.dkr.ecr.eu-west-2.amazonaws.com/notification-service
+  repository: 319602347522.dkr.ecr.eu-west-2.amazonaws.com/notification-service
   tag: sha-7a960a9
   pullPolicy: Always
 service:
@@ -11,7 +11,7 @@ service:
 ingress:
   enabled: false
   className: nginx
-  host: dev.wsedf.online
+  host: dev.vhbj.site
   path: /notifications
   pathType: Prefix
 resources:
@@ -46,10 +46,10 @@ configmap:
   NODE_ENV: development
   PORT: "3000"
   LOG_LEVEL: debug
-  SMTP_HOST: "smtp.example.com"
+  SMTP_HOST: "smtp.gmail.com"
   SMTP_PORT: "587"
-  EMAIL_FROM: "noreply-dev@example.com"
-  DB_HOST: pharma-dev-postgres.cpi0gswk4xit.eu-west-2.rds.amazonaws.com
+  EMAIL_FROM: "chimdi247@gmail.com"
+  DB_HOST: pharma-dev-postgres.cvugcgi8kt0y.eu-west-2.rds.amazonaws.com
 envFrom:
   - secretRef:
       name: db-credentials
