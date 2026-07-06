@@ -8,7 +8,7 @@ grafana:
     enabled: true
     ingressClassName: nginx
     hosts:
-      - monitoring.wsedf.online
+      - monitoring.vhbj.site
     paths:
       - /
     annotations:
@@ -25,10 +25,10 @@ alertmanager:
   enabled: true
   config:
     global:
-      smtp_smarthost: "smtp.pharma.com:587"
+      smtp_smarthost: "sandbox.smtp.mailtrap.io:587"
       smtp_from: "alertmanager@pharma.com"
-      smtp_auth_username: "alertmanager@pharma.com"
-      smtp_auth_password: "changeme"
+      smtp_auth_username: "3f2412dea3f253"
+      smtp_auth_password: "915ebc15666e4b"
     route:
       group_by: ["alertname", "cluster", "service"]
       group_wait: 30s
