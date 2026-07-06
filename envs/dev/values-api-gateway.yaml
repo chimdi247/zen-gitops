@@ -13,8 +13,8 @@ ingress:
   className: nginx
   annotations: {}
   host: ""
-  path: /api
-  pathType: Prefix
+  path: /api(/|$)(.*)
+  pathType: ImplementationSpecific
 resources:
   requests:
     cpu: 100m
